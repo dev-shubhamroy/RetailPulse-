@@ -8,7 +8,11 @@
   },
   "scripts": {
     "dev": "node --watch --env-file=../.env src/server.js",
-    "start": "node --env-file=../.env src/server.js"
+    "start": "node --env-file=../.env src/server.js",
+    "migrate": "node --env-file=../.env src/db/migrate.js",
+    "seed": "node --env-file=../.env src/db/seed.js",
+    "ingest:policies": "node --env-file=../.env src/ai/ingestPolicies.js",
+    "test": "node --env-file=../.env --test --test-concurrency=1 ../tests/api.test.js"
   },
   "dependencies": {
     "cors": "^2.8.6",
